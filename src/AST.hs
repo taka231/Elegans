@@ -1,6 +1,7 @@
 module AST where
-import           Data.Map  (Map)
-import           Data.Text (Text)
+import           RIO
+import           RIO.Map  (Map)
+import           RIO.Text (Text)
 
 data Expr = LInt Int
     | LBool Bool
@@ -16,3 +17,7 @@ data Value = VInt Int
     deriving (Eq, Show)
 
 type Env = Map Text Value
+
+data Types = TInt
+            | Function
+            deriving (Eq,Show)
